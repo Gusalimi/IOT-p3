@@ -4,10 +4,10 @@ metadata:
    name: wil-playground
    namespace: dev
 spec:
-   type: NodePort
+   type: "loadBalancer"
    selector:
       app: wil-playground
    ports:
-      - port: 3000
+      - protocol: TCP
+        port: 3000
         targetPort: 8888
-        nodePort: 30001
